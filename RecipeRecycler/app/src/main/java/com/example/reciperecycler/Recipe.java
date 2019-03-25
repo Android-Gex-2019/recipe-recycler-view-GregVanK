@@ -1,6 +1,8 @@
 package com.example.reciperecycler;
 
-public class Recipe {
+import java.io.Serializable;
+
+public class Recipe implements Serializable {
     public Recipe(String name, String description, String image, String ingredients, String directions) {
         this.name = name;
         this.description = description;

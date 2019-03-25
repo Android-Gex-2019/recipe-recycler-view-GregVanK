@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="6dp">
-
+    android:padding="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardBackgroundColor="#E6E6E6"
+    app:cardElevation="8dp"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
         android:id="@+id/lblRecipeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold" />
@@ -21,3 +29,4 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 </LinearLayout>
+</android.support.v7.widget.CardView>

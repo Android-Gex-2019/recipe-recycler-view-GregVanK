@@ -17,11 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         listContents = DataProvider.getRecipes();
-        for(Iterator i = listContents.iterator(); i.hasNext();){
-            Recipe temp = (Recipe)i.next();
 
-
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

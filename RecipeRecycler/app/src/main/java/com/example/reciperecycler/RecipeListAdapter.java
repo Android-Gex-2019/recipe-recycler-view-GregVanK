@@ -1,6 +1,7 @@
 package com.example.reciperecycler;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.LinkedList;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 public class RecipeListAdapter extends
         RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder> {
@@ -32,17 +35,14 @@ public class RecipeListAdapter extends
 
         @Override
         public void onClick(View view) {
-            // Get the position of the item that was clicked.
             int mPosition = getLayoutPosition();
 
-            // Use that to access the affected item in mWordList.
-            //String element = mWordList.get(mPosition);
-            // Change the word in the mWordList.
+            Recipe recipe = mRecipeList.get(mPosition);
 
-            //mRecipeList.set(mPosition, "Clicked! " + element);
-            // Notify the adapter, that the data has changed so it can
-            // update the RecyclerView to display the data.
+            Intent detailIntent = new Intent(view.getContext(), ActivityRecipeDetail.class);
+            detailIntent.putExtra("recipe",recipe);
             mAdapter.notifyDataSetChanged();
+            view.getContext().startActivity(detailIntent);
         }
     }
 
