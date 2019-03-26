@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 import java.util.LinkedList;
 
-import static android.support.v4.content.ContextCompat.startActivity;
+/***
+ * Author:Greg VanKampen
+ * Date:3/25/2019
+ * File:RecipeListAdapter
+ */
 
 public class RecipeListAdapter extends
         RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder> {
@@ -25,6 +29,11 @@ public class RecipeListAdapter extends
         final RecipeListAdapter mAdapter;
 
 
+        /**
+         * View holder constructor
+         * @param itemView
+         * @param adapter
+         */
         public RecipeViewHolder(View itemView, RecipeListAdapter adapter) {
             super(itemView);
             recipeTitleView = itemView.findViewById(R.id.lblRecipeName);
@@ -33,6 +42,10 @@ public class RecipeListAdapter extends
             itemView.setOnClickListener(this);
         }
 
+        /**
+         * opens recipe when viewholder is clicked
+         * @param view
+         */
         @Override
         public void onClick(View view) {
             int mPosition = getLayoutPosition();
@@ -52,23 +65,10 @@ public class RecipeListAdapter extends
     }
 
     /**
-     * Called when RecyclerView needs a new ViewHolder of the given type to
-     * represent an item.
-     *
-     * This new ViewHolder should be constructed with a new View that can
-     * represent the items of the given type. You can either create a new View
-     * manually or inflate it from an XML layout file.
-     *
-     * The new ViewHolder will be used to display items of the adapter using
-     * onBindViewHolder(ViewHolder, int, List). Since it will be reused to
-     * display different items in the data set, it is a good idea to cache
-     * references to sub views of the View to avoid unnecessary findViewById()
-     * calls.
-     *
-     * @param parent   The ViewGroup into which the new View will be added after
-     *                 it is bound to an adapter position.
-     * @param viewType The view type of the new View. @return A new ViewHolder
-     *                 that holds a View of the given view type.
+     * Generates a view container for the content
+     * @param parent
+     * @param viewType
+     * @return
      */
     @Override
     public RecipeListAdapter.RecipeViewHolder onCreateViewHolder(ViewGroup parent,
@@ -80,14 +80,9 @@ public class RecipeListAdapter extends
     }
 
     /**
-     * Called by RecyclerView to display the data at the specified position.
-     * This method should update the contents of the ViewHolder.itemView to
-     * reflect the item at the given position.
-     *
-     * @param holder   The ViewHolder which should be updated to represent
-     *                 the contents of the item at the given position in the
-     *                 data set.
-     * @param position The position of the item within the adapter's data set.
+     * Inserts data into the view holder
+     * @param holder
+     * @param position
      */
     @Override
     public void onBindViewHolder(RecipeListAdapter.RecipeViewHolder holder,
@@ -99,10 +94,10 @@ public class RecipeListAdapter extends
         holder.recipeDescView.setText(mCurrent.description);
     }
 
+
     /**
-     * Returns the total number of items in the data set held by the adapter.
-     *
-     * @return The total number of items in this adapter.
+     * returns the size of the list adapter
+     * @return
      */
     @Override
     public int getItemCount() {

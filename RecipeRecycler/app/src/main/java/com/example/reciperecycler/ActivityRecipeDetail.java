@@ -8,6 +8,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+/***
+ * Author:Greg VanKampen
+ * Date:3/25/2019
+ * File:ActivityRecipeDetail
+ */
 public class ActivityRecipeDetail extends AppCompatActivity {
 
     TextView nameText;
@@ -15,6 +20,11 @@ public class ActivityRecipeDetail extends AppCompatActivity {
     TextView directionsText;
     ImageView foodImage;
     Recipe currentRecipe;
+
+    /**
+     * loads all the details into the recipe layout views
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
